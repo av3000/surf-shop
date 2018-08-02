@@ -13,7 +13,7 @@ const PostSchema = new Schema({
 	author: {
 		type: Schema.Types.ObjectId,
 		ref: 'User'
-	}
+	},
 	reviews: [
 		{
 			type: Schema.Types.ObjectId,
@@ -21,8 +21,6 @@ const PostSchema = new Schema({
 		}
 	]
 });
-
-UserSchema.plugin(passportLocalMongoose);
 
 module.exports = mongoose.model('Post', PostSchema);
 
